@@ -9,14 +9,17 @@
     
 </h1>
 </body>
-<script>
-    let h1 = document.querySelector("h1") ;
-    h1.innerHTML = "Hello World..." ;
-
-    //let root = document.getElementById("root") ;
-
-    //root.appendChild(heading) ;
-    //root.appendChild(heading) ;
-
-</script>
+<script 
+    crossorigin 
+    src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+<script 
+    crossorigin 
+    src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <script>
+        const heading = React.createElement("h1" , {} , "Hello World") ;
+        const root = ReactDOM.createRoot(document.getElementById("root")) ;
+        root.render(heading) ;
+    </script>
 </html>
