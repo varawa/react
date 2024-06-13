@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>React</title>
 </head>
-<body><h1 id="root">
-    
-</h1>
-</body>
+<body><div id="root">
+    <h2>Not rendered</h2>
+    <h1>HTML stuff</h1>
+</div>
+
+
 <script 
     crossorigin 
     src="https://unpkg.com/react@18/umd/react.development.js"
@@ -18,8 +20,38 @@
     src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
     ></script>
     <script>
-        const heading = React.createElement("h1" , {} , "Hello World") ;
+        const heading1 = React.createElement("h1" , 
+            {  
+                id:"title"
+            }
+            , "Heading1"
+        ) ;
+        const heading2 = React.createElement("h2" , 
+            {  
+                id:"title2"
+            }
+            , "Heading2"
+        ) ;
+
+        const container = React.createElement("div", {
+            id: "container"
+        }
+        , [heading1 , heading2]
+        //Multiple children are passed through array .
+    ) 
+
+        //Passing a react element inside the root element .
+        //console.log(heading) ;
+        //A react element is an javascript object .
+
+
+        //React overwrites everything that already exists in root .
         const root = ReactDOM.createRoot(document.getElementById("root")) ;
-        root.render(heading) ;
+ 
+        //Passing a react element inside the root .
+        root.render(container) ;
+
+
     </script>
+    </body>
 </html>
