@@ -18,5 +18,8 @@
   "homepage": "https://github.com/varawa/react#readme",
   "devDependencies": {
     "parcel": "^2.12.0"
+  },
+  "dependencies": {
+    "react": "^18.3.1"
   }
 }
