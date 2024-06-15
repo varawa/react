@@ -1,0 +1,19 @@
+{
+  "name": "react",
+  "version": "1.0.0",
+  "description": "learning react",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/varawa/react.git"
+  },
+  "author": "Vartika Rawat",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/varawa/react/issues"
+  },
+  "homepage": "https://github.com/varawa/react#readme"
+}

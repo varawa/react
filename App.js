@@ -6,6 +6,7 @@ const heading1 = React.createElement("h1" ,
 ) ;
 const heading2 = React.createElement("h2" , 
     {  
+        //Props(they can be anything , not only class/id or style) .
         id:"title2"
     }
     , "Heading2"
