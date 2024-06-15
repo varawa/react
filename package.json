@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/varawa/react/issues"
   },
-  "homepage": "https://github.com/varawa/react#readme"
+  "homepage": "https://github.com/varawa/react#readme",
+  "devDependencies": {
+    "parcel": "^2.12.0"
+  }
 }

@@ -31,3 +31,12 @@ const root = ReactDOM.createRoot(document.getElementById("root")) ;
 root.render(container) ;
 
 //Order of files matters .
+
+//Installing parcel as a dev dependency .
+
+
+//BUNDLES
+
+//React bundling involves the procedure of grouping and enhancing the source code of a
+//React application and its associated components into one or more files to include in a web browser. 
+//This bundling process is critical for enhancing the performance and reducing loading times of React applications.
