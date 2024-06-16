@@ -1,6 +1,24 @@
 import React from "react";
 import ReactDOM from "react-dom/client" ;
 
+/*
+*HMR - Hot Module Reloading .
+*File watcher algorithm - C++ .
+*BUNDLING
+*Cleaning our code .
+*Dev and Production build .
+*Super fast build algorithms .
+*Image Optimization .
+*Caching while development .
+*Compression (image compressions too).
+*Compatible with older versions of browsers .
+*HTTPS on dev build .
+*Port Number .
+*Consistent hashing algorithm .
+*Zero Configuration .
+*
+*/
+
 const heading1 = React.createElement("h1" , 
     {  
         id:"title"
