@@ -15,6 +15,7 @@ import ReactDOM from "react-dom/client" ;
 *   HTTPS on dev build .
 *   Port Number .
 *   Consistent hashing algorithm .
+*   Tree Shaking - Removing unwanted functions .
 *   Zero Configuration .
 *
 */
@@ -56,7 +57,7 @@ root.render(container) ;
 //Installing parcel as a dev dependency .
 
 
-//BUNDLES
+//BUNDLERS
 
 //React bundling involves the procedure of grouping and enhancing the source code of a
 //React application and its associated components into one or more files to include in a web browser. 
