@@ -1,7 +1,7 @@
 import React from "react" ;
 import ReactDOM from "react-dom/client" ;
 
-const heading = (
+const Heading= ()=> (
     <h1 id="title" key="h1">
         Namaste React
     </h1>
@@ -16,9 +16,21 @@ const heading = (
 
 //Functional component is a normal js function which can return jsx or react .
 
+//const data = api.getData() ;
+//when rendered through jsx , it is sanitized and made secure to use to some extent .
+
+//Sanitizing using JSX
+
+//Component composition : When we use a component inside a component .
+//here <Heading/> used inside HeaderComponent() .
+
 const HeaderComponent=()=>{
     return (
         <div>
+            {/*data*/}  
+            {console.log("Any JS code")}
+            <Heading/>
+            {Heading()}
             <h1>Functional Component</h1>
             <h2>Heading 2</h2>
         </div>
