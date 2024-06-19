@@ -26,7 +26,7 @@ const heading1 = React.createElement("h1" ,
         key:"h1"
     }
     , "Heading1"
-) ;
+);
 const heading2 = React.createElement("h2" , 
     {  
         //Props(they can be anything , not only class/id or style) .
@@ -34,7 +34,7 @@ const heading2 = React.createElement("h2" ,
         key:"h2"
     }
     , "Heading2"
-) ;
+);
 
 
 ////Always have to give keys to the children .
@@ -60,10 +60,10 @@ const container = React.createElement("div", {
 
 
 //React overwrites everything that already exists in root .
-const root = ReactDOM.createRoot(document.getElementById("root")) ;
+const root = ReactDOM.createRoot(document.getElementById("root"));
 
 //Passing a react element inside the root .
-root.render(container) ;
+root.render(container);
 
 //Order of files matters .
 
@@ -82,10 +82,20 @@ root.render(container) ;
 
 //JSX??
 
+//JSX => React.createElement => Object => HTML(DOM)
+//Babel converts JSX to createElement .
+
 const heading = (<h1 id="title" key="h3">
         Namaste React
     </h1>
-) ;
+);
+
+//Babel understands JSX and not browser .
+
+//Babel is a JavaScript compiler​
+//Babel is a toolchain that is mainly used to convert ECMAScript 2015+ code into a 
+//backwards compatible version of JavaScript in current and older browsers or environments.
 
 //Is JSX == HTML inside JavaScript ? NO
 //HTML and JSX are look-alikes but not the same thing .
+//Javascript only uses CamelCase .
