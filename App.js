@@ -68,7 +68,7 @@ root.render(container);
 //Order of files matters .
 
 //Installing parcel as a dev dependency .
-
+//TRANSITIVE DEPENDENCIES?
 
 //BUNDLERS
 
@@ -90,12 +90,21 @@ const heading = (<h1 id="title" key="h3">
     </h1>
 );
 
+//The above thing is called "JSX EXPRESSION" .
+
 //Babel understands JSX and not browser .
 
 //Babel is a JavaScript compiler​
 //Babel is a toolchain that is mainly used to convert ECMAScript 2015+ code into a 
 //backwards compatible version of JavaScript in current and older browsers or environments.
 
+//Babel comes alongwith Parcel as a dependency .
+
 //Is JSX == HTML inside JavaScript ? NO
 //HTML and JSX are look-alikes but not the same thing .
-//Javascript only uses CamelCase .
+
+
+//JSX is SYNTACTIC SUGAR .
+
+//NodeModules are in gitignore but when a code is pushed to git and deployed ,
+//the server creates its own node modules then the website is published .
