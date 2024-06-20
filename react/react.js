@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client" ;
 
 const Heading= ()=> (
     <h1 id="title" key="h1">
-        Namaste React
+        Food Villa
     </h1>
 )
 
@@ -14,20 +14,23 @@ const Heading= ()=> (
 //Functional Component
 //Name of component starts with capital letter (CONVENTION) .
 
-//Functional component is a normal js function which can return jsx or react .
+//Functional component is a normal js function which returns jsx or react .
 
 //const data = api.getData() ;
 //when rendered through jsx , it is sanitized and made secure to use to some extent .
 
 //Sanitizing using JSX
 
-//Component composition : When we use a component inside a component .
+//Component composition : 
+//When we use a component inside a component .
 //here <Heading/> used inside HeaderComponent() .
+
+//Only one parent in one JSX expression .
 
 const HeaderComponent=()=>{
     return (
         <div>
-            {/*data*/}  
+            {/*data*/}
             {console.log("Any JS code")}
             <Heading/>
             {Heading()}
@@ -36,6 +39,10 @@ const HeaderComponent=()=>{
         </div>
     ) ; 
 }
+
+//JSX curly braces {} are meant for evaluating expressions, 
+//not for arbitrary JavaScript statements like variable declarations (var, let, const), 
+//function declarations, or control structures (if, for, etc.).
 
 const root = ReactDOM.createRoot(document.getElementById("root")) ;
 
