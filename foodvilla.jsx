@@ -19,12 +19,18 @@ import ReactDOM from "react-dom/client" ;
 
 
 const Title = () => (
-    <img className="logo" alt= "logo" src = "https://www.uidownload.com/files/909/69/136/organic-food-restaurant-logo-template-free-vector.jpg"></img>
+    <a href="/">
+        <img 
+            className="logo" 
+            alt= "logo" 
+            src = "https://www.uidownload.com/files/909/69/136/organic-food-restaurant-logo-template-free-vector.jpg" 
+        />
+    </a>
 )
 
 //COMPOSING COMPONENTS
 
-const HeaderComponent = () => {
+const Header = () => {
     return (
         <div className = "header">
             <Title/>
@@ -40,12 +46,34 @@ const HeaderComponent = () => {
     )
 }
 
+const Body = () =>{
+    return(
+        <h4>Body</h4>
+    )
+} 
+
+const Footer = () =>{
+    return(
+        <h4>Footer</h4>
+    )
+}
 
 
 const AppLayout = ()=>{
-    return {} ;
+    return (
+        <>
+            <Header/>
+            <Body/>
+            <Footer/>
+        </>
+    ) ;
 }
+
+//React.Fragment
+//Its a component exported by React .
+//Its like an empty tag .
+//Can be written as <> </>
 
 const root = ReactDOM.createRoot(document.getElementById("root")) ;
 
-root.render(<HeaderComponent/>) ;
+root.render(<AppLayout/>) ;
