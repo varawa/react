@@ -48,97 +48,6 @@ const Header = () => {
 
 //Config Driven UI (Backend and APIs controls what the website shows on different occassions/places etc. )
 
-/*const RestaurantList = [
-    
-        {info: {
-        id: "368179",
-        name: "Pizza Hut",
-        cloudinaryImageId: "2b4f62d606d1b2bfba9ba9e5386fabb7",
-        locality: "Garh Road",
-        areaName: "Shastri Nagar",
-        costForTwo: "₹350 for two",
-        cuisines: [
-          "Pizzas"
-        ],
-        avgRating: 4.2,
-        parentId: "721",
-        avgRatingString: "4.2",
-        totalRatingsString: "1K+",
-        sla: {
-          deliveryTime: 54,
-          lastMileTravel: 7.8,
-          serviceability: "SERVICEABLE",
-          slaString: "50-55 mins",
-          lastMileTravelString: "7.8 km",
-          iconType: "ICON_TYPE_EMPTY"
-        },
-        availability: {
-          nextCloseTime: "2024-06-22 01:00:00",
-          opened: true
-        },
-        badges: {
-          imageBadges: [
-            {
-              imageId: "Rxawards/_CATEGORY-Pizza.png",
-              description: "Delivery!"
-            }
-          ]
-        },
-        isOpen: true,
-        type: "F",
-        badgesV2: {
-          entityBadges: {
-            imageBased: {
-              badgeObject: [
-                {
-                  attributes: {
-                    description: "Delivery!",
-                    imageId: "Rxawards/_CATEGORY-Pizza.png"
-                  }
-                }
-              ]
-            },
-            textBased: {
-              
-            },
-            textExtendedBadges: {
-              
-            }
-          }
-        },
-        aggregatedDiscountInfoV3: {
-          header: "50% OFF",
-          subHeader: "UPTO ₹100"
-        },
-        differentiatedUi: {
-          displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
-          differentiatedUiMediaDetails: {
-            mediaType: "ADS_MEDIA_ENUM_IMAGE",
-            lottie: {
-              
-            },
-            video: {
-              
-            }
-          }
-        },
-        reviewsSummary: {
-          
-        },
-        displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
-        restaurantOfferPresentationInfo: {
-          
-        }
-      },
-      analytics: {
-        
-      },
-      cta: {
-        link: "https://www.swiggy.com/restaurants/pizza-hut-garh-road-shastri-nagar-meerut-368179",
-        type: "WEBLINK"
-      }
-    },
-]*/
 
 const restaurantList = [
   {
@@ -822,17 +731,25 @@ const RestaurantCard = ({name , cuisines , cloudinaryImageId ,deliveryTime}) => 
 //props = properties .
 //props are passed as arguments in the functional component on their own .
 
+//JSX curly braces do support embedding JavaScript expressions, 
+//but they do not support JavaScript statements like for loops directly. 
+//JavaScript expressions return a value, whereas statements perform an action. Here’s the difference:
+
+//Expressions are things like 2 + 2, myArray.map(...), or restaurant.name.
+//Statements are things like if conditions, for loops, and while loops.
+
+
+
 const Body = () =>{
     return(
         <div className="restaurantList">
-            <RestaurantCard cloudinaryImageId = {restaurantList[0].info.cloudinaryImageId} name = {restaurantList[0].info.name} cuisines = {restaurantList[0].info.cuisines} deliveryTime = {restaurantList[0].info.sla.deliveryTime}/>
-            <RestaurantCard cloudinaryImageId = {restaurantList[1].info.cloudinaryImageId} name = {restaurantList[1].info.name} cuisines = {restaurantList[1].info.cuisines} deliveryTime = {restaurantList[1].info.sla.deliveryTime}/>
-            <RestaurantCard cloudinaryImageId = {restaurantList[2].info.cloudinaryImageId} name = {restaurantList[2].info.name} cuisines = {restaurantList[2].info.cuisines} deliveryTime = {restaurantList[2].info.sla.deliveryTime}/>
-            <RestaurantCard cloudinaryImageId = {restaurantList[3].info.cloudinaryImageId} name = {restaurantList[3].info.name} cuisines = {restaurantList[3].info.cuisines} deliveryTime = {restaurantList[3].info.sla.deliveryTime}/>
-            <RestaurantCard cloudinaryImageId = {restaurantList[4].info.cloudinaryImageId} name = {restaurantList[4].info.name} cuisines = {restaurantList[4].info.cuisines} deliveryTime = {restaurantList[4].info.sla.deliveryTime}/>
-            
-            
-        </div>
+          {
+            //Map vs for loop.
+            restaurantList.map(restaurant =>{
+              return <RestaurantCard {...restaurant.info}/>
+            })
+          }
+      </div>
     )
 } 
 
@@ -851,7 +768,6 @@ const AppLayout = ()=>{
         <>
             <Header/>
             <Body/>
-            
             <Footer/>
         </>
     ) ;
