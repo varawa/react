@@ -746,7 +746,7 @@ const Body = () =>{
           {
             //Map vs for loop.
             restaurantList.map(restaurant =>{
-              return <RestaurantCard {...restaurant.info}/>
+              return <RestaurantCard {...restaurant.info} key={restaurant.info.name}/>
             })
           }
       </div>
@@ -758,10 +758,6 @@ const Footer = () =>{
         <h4>Footer</h4>
     )
 }
-
-
-
-
 
 const AppLayout = ()=>{
     return (
