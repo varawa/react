@@ -1,6 +1,10 @@
 import React from "react" ;
 import ReactDOM from "react-dom/client" ;
+
+//Named Import
 import {Title} from "./components/Header"
+
+//Default Import
 import Header from "./components/Header"
 
 
