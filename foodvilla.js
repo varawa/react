@@ -745,6 +745,11 @@ const Body = () =>{
         <div className="restaurantList">
           {
             //Map vs for loop.
+
+            //Why can't we use index as a key?
+            //a key is the only thing React uses to identify DOM elements. 
+            //What happens if you push an item to the list or remove something in the middle? 
+            //If the key is same as before React assumes that the DOM element represents the same component as before. But that is no longer true.
             restaurantList.map(restaurant =>{
               return <RestaurantCard {...restaurant.info} key={restaurant.info.name}/>
             })
