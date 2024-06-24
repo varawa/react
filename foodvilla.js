@@ -778,3 +778,11 @@ const root = ReactDOM.createRoot(document.getElementById("root")) ;
 
 root.render(<AppLayout/>) ;
 
+//Virtual DOM
+
+//A represantation of DOM with us is virtual DOM .
+
+//Need
+//We need virtual DOM for reconciliation .
+//Reconciliation is an algorithm to diff one tree from another .
+//Uses it to decide which tree needs to be updated and which does not .
