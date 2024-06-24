@@ -790,3 +790,7 @@ root.render(<AppLayout/>) ;
 //Why is React Fast?
 //React uses Virtual DOM and reconciliation .
 //Keys make it easier to find what needs to be updated or added and hence makes the process faster .
+
+//React Fiber
+//New reconciliation engine .
+//Came in React16 .
