@@ -1,5 +1,8 @@
 import React from "react" ;
 import ReactDOM from "react-dom/client" ;
+import {Title} from "./components/Header"
+import Header from "./components/Header"
+
 
 /**
  * Header
@@ -18,33 +21,7 @@ import ReactDOM from "react-dom/client" ;
  */
 
 
-const Title = () => (
-    <a href="/">
-        <img 
-            className="logo" 
-            alt= "logo" 
-            src = "https://www.uidownload.com/files/909/69/136/organic-food-restaurant-logo-template-free-vector.jpg" 
-        />
-    </a>
-)
-
 //COMPOSING COMPONENTS
-
-const Header = () => {
-    return (
-        <div className = "header">
-            <Title/>
-            <div className = "nav-items">
-                <ul>
-                    <li>Home</li>
-                    <li>About Us</li>
-                    <li>Contact</li>
-                    <li>Cart</li>
-                </ul>
-            </div>
-        </div>
-    )
-}
 
 //Config Driven UI (Backend and APIs controls what the website shows on different occassions/places etc. )
 
