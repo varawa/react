@@ -786,3 +786,7 @@ root.render(<AppLayout/>) ;
 //We need virtual DOM for reconciliation .
 //Reconciliation is an algorithm to diff one tree from another .
 //Uses it to decide which tree needs to be updated and which does not .
+
+//Why is React Fast?
+//React uses Virtual DOM and reconciliation .
+//Keys make it easier to find what needs to be updated or added and hence makes the process faster .
