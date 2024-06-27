@@ -1,5 +1,5 @@
 
-const Title = () => (
+export const Title = () => (
     <a href = "/">
         <img
             className = "logo"
