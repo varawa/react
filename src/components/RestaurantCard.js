@@ -1,6 +1,4 @@
-import { IMG_CDN_URL } from "../../config"
-
-import { restaurantList } from "../../config"
+import { IMG_CDN_URL } from "../config"
 
 export const RestaurantCard = ({name , cuisines , cloudinaryImageId ,deliveryTime}) => { 
     return(
