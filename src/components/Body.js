@@ -1,30 +1,41 @@
 import { restaurantList } from "../config"
   
 import { RestaurantCard } from "./RestaurantCard"
-//Optional Chaining ?.
+
+import { useState } from "react";
+
+
+//  Optional Chaining ?.
 
 
 
-//props = properties .
-//props are passed as arguments in the functional component on their own .
+//  props = properties .
+//  props are passed as arguments in the functional component on their own .
 
-//JSX curly braces do support embedding JavaScript expressions, 
-//but they do not support JavaScript statements like for loops directly. 
-//JavaScript expressions return a value, whereas statements perform an action. Here’s the difference:
+//  JSX curly braces do support embedding JavaScript expressions, 
+//  but they do not support JavaScript statements like for loops directly. 
+//  JavaScript expressions return a value, whereas statements perform an action. Here’s the difference:
 
-//Expressions are things like 2 + 2, myArray.map(...), or restaurant.name.
-//Statements are things like if conditions, for loops, and while loops.
+//  Expressions are things like 2 + 2, myArray.map(...), or restaurant.name.
+//  Statements are things like if conditions, for loops, and while loops.
 
 
-//ONE WAY DATA-BINDING
+//  ONE WAY DATA-BINDING
 
-//React uses one-way data binding .
+//  React uses one-way data binding .
+
+
+//  What is State ?
+//  What is Hook ?
+//  What is useState ?
 
 
 const Body = () =>{
-    let searchText = "KFC" ;
 
 
+    //Search text is a local state variable .
+    const [searchText] = useState("KFC") ;       //To create state variable .
+ 
     return(
         <>
             <div className="search-container">
@@ -33,7 +44,10 @@ const Body = () =>{
                     className="search-input" 
                     placeholder="Search" 
                     value={searchText}
-                    onChange={(e) => console.log(e.target.value)}
+                    onChange={(e) => {
+                        searchText = e.target.value ;
+                        console.log(searchText) ;
+                    }}
                 />
                 <button className="search-btn">Search</button>
 
