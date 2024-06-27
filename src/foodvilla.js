@@ -7,6 +7,10 @@ import {Title} from "./components/Header"
 //Default Import
 import Header from "./components/Header"
 
+import * as obj from "./components/Header"
+
+//obj.Title
+
 
 /**
  * Header
@@ -748,7 +752,7 @@ const Footer = () =>{
 const AppLayout = ()=>{
     return (
         <>
-            <Header/>
+            <obj.Header/>
             <Body/>
             <Footer/>
         </>

@@ -11,7 +11,7 @@ export const Title = () => (
 
 
 
-const Header = () => {
+export const Header = () => {
     return (
         <div className = "header">
             <Title/>
@@ -28,4 +28,6 @@ const Header = () => {
 }
 
 
-export default Header ;
+//export default Title ;
+
+//While exporting by default , we can change the name of function component in the file where we import it .
