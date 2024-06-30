@@ -26,7 +26,7 @@ import { useState } from "react";
 
 
 //  What is State ?
-//  What is Hook ?
+//  What is Hook ? -functions
 //  What is useState ?
 
 
@@ -34,8 +34,13 @@ const Body = () =>{
 
 
     //Search text is a local state variable .
-    const [searchText] = useState("KFC") ;       //To create state variable .
+    const [searchText , setSearchText] = useState() ;       //To create state variable .
  
+    //[searchText , setSearchText] destructured the array returned by useState .
+    //React doesnt have "Two Way Data Binding" .
+
+    //useState() hooks are used to create local state variables in react .
+
     return(
         <>
             <div className="search-container">
@@ -45,11 +50,11 @@ const Body = () =>{
                     placeholder="Search" 
                     value={searchText}
                     onChange={(e) => {
-                        searchText = e.target.value ;
+                        setSearchText(e.target.value) ;
                         console.log(searchText) ;
                     }}
                 />
-                <button className="search-btn">Search</button>
+                <button className="search-btn">Search - {searchText}</button>
 
             </div>
 
