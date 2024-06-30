@@ -36,10 +36,17 @@ const Body = () =>{
     //Search text is a local state variable .
     const [searchText , setSearchText] = useState() ;       //To create state variable .
  
+    const[searchClicked , setSearchClicked] = useState("False") ;
+
     //[searchText , setSearchText] destructured the array returned by useState .
     //React doesnt have "Two Way Data Binding" .
 
     //useState() hooks are used to create local state variables in react .
+
+    //Why do we need state variables?
+
+    //React has one way binding, also react does not keep track of changes made in local variables ,
+    //but it keeps track of state variables .
 
     return(
         <>
@@ -54,7 +61,13 @@ const Body = () =>{
                         console.log(searchText) ;
                     }}
                 />
-                <button className="search-btn">Search - {searchText}</button>
+                <h1>{searchClicked}</h1>
+                <button className="search-btn" onClick={()=>{
+                    if(searchClicked == "True")
+                        setSearchClicked("False") ;
+                    else
+                        setSearchClicked("True") ;
+                }}>Search - {searchText}</button>
 
             </div>
 
