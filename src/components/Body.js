@@ -90,6 +90,10 @@ const Body = () =>{
         const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.9120152&lng=77.7122996&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING") ;
         const json = await data.json() ;
         console.log(json) ;
+
+        //Optional chaining .
+
+        setRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants) ;
     }
 
     //Two Parameters of useEffect : 1. callback function 2. Dependency Array .
@@ -116,7 +120,7 @@ const Body = () =>{
                     className="search-btn" 
                     onClick={()=>{
                         setRestaurants(restore) ;
-                        const filteredData = filterData(searchText , restaurantList) ;
+                        const filteredData = filterData(searchText , restaurants) ;
                         
                         setRestaurants(filteredData) ;
                     }}
