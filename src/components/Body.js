@@ -6,6 +6,8 @@ import { useState } from "react";
 
 import { useEffect } from "react";
 
+import Shimmer from "./shimmer";
+
 //  Optional Chaining ?.
 
 
@@ -106,7 +108,12 @@ const Body = () =>{
 
     //The call-back function inside useEffect is not called immediately but called only when useEffect wants it to be called .
 
-    return(
+    //Conditional Rendering .
+    //If(restaurant === empty) => load shimmer UI
+    //if it has data then load actual UI .
+
+    
+    return (restaurants.length === 0) ? <Shimmer/> : (
         <>
             <div className="search-container">
                 <input 
@@ -122,7 +129,6 @@ const Body = () =>{
                 <button 
                     className="search-btn" 
                     onClick={()=>{
-                        setRestaurants(restore) ;
                         const filteredData = filterData(searchText , restaurants) ;
                         
                         setRestaurants(filteredData) ;
@@ -147,7 +153,7 @@ const Body = () =>{
             </div>
       
         </>
-    )
-} 
+    );
+} ;
 
 export default Body ;
