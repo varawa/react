@@ -37,6 +37,8 @@ import Footer from "./components/Footer"
 
 //Config Driven UI (Backend and APIs controls what the website shows on different occassions/places etc. )
 
+//Config : A JS object sent by backend that changes the UI dynamically .
+
 const AppLayout = ()=>{
     return (
         <>

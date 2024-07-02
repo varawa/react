@@ -29,6 +29,8 @@ import { useState } from "react";
 //  What is Hook ? -functions
 //  What is useState ?
 
+//useState is a hook .
+
 function filterData(search , restro){
     
     const filtered = restro.filter((restaurant)=>
