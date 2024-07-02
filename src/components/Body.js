@@ -30,10 +30,11 @@ import { useState } from "react";
 //  What is useState ?
 
 function filterData(search , restro){
+    
     const filtered = restro.filter((restaurant)=>
         restaurant.info.name.includes(search)
     ) ;
-
+    
     return filtered ;
 }
 
