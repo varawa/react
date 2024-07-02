@@ -31,6 +31,18 @@ import { useState } from "react";
 
 //useState is a hook .
 
+
+//MicroServices ?
+//We have small projects for every small component (UI , API , Notifications , Logs , Authentication) .
+//And every component (small project) can run on different ports and can have different databases that they rely on .
+
+//How these are connected ?
+//All the ports are mapped to eachother and in majority cases have the same domain name .
+
+//Seperation of concern (SOC) .
+
+//Monolith ?
+
 function filterData(search , restro){
     
     const filtered = restro.filter((restaurant)=>
@@ -43,9 +55,11 @@ function filterData(search , restro){
 
 const Body = () =>{
 
-
+    console.log("re render") ;
     //Search text is a local state variable .
     const [searchText , setSearchText] = useState("") ;       //To create state variable .
+
+    const restore = restaurantList ;
  
     const[restaurants , setRestaurants] = useState(restaurantList) ;
 
@@ -69,21 +83,20 @@ const Body = () =>{
                     value={searchText}
                     onChange={(e) => {
                         setSearchText(e.target.value) ;
-                        console.log(searchText) ;
                     }}
                 />
                 
                 <button 
                     className="search-btn" 
                     onClick={()=>{
-                        const filteredData = filterData(searchText , restaurants) ;
+                        setRestaurants(restore) ;
+                        const filteredData = filterData(searchText , restaurantList) ;
                         
                         setRestaurants(filteredData) ;
                     }}
-                >
+                    >
                     Search  
                  </button>
-
             </div>
 
             <div className="restaurantList">
