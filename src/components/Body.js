@@ -4,6 +4,7 @@ import { RestaurantCard } from "./RestaurantCard"
 
 import { useState } from "react";
 
+import { useEffect } from "react";
 
 //  Optional Chaining ?.
 
@@ -67,9 +68,7 @@ const Body = () =>{
 
     //Search text is a local state variable .
     const [searchText , setSearchText] = useState("") ;       //To create state variable .
-
-    const restore = restaurantList ;
- 
+    
     const[restaurants , setRestaurants] = useState(restaurantList) ;
 
     //[searchText , setSearchText] destructured the array returned by useState .
@@ -81,6 +80,17 @@ const Body = () =>{
 
     //React has one way binding, also react does not keep track of changes made in local variables ,
     //but it keeps track of state variables .
+
+    useEffect(() =>{
+        console.log("useEffectr Called") ;
+    } , [searchText]) ;
+
+    //Two Parameters of useEffect : 1. callback function 2. Dependency Array .
+    //Dependency array decides on what event will useEffect be called .(Called only once when dependency array is empty .)
+    //useEffect is called after render when dependency array is EMPTY .
+    //When dependency array is not empty then it changes after every re-render .
+
+    //The call-back function inside useEffect is not called immediately but called only when useEffect wants it to be called .
 
     return(
         <>
