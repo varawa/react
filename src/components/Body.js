@@ -82,13 +82,20 @@ const Body = () =>{
     //but it keeps track of state variables .
 
     useEffect(() =>{
-        console.log("useEffectr Called") ;
-    } , [searchText]) ;
+        //API call              (CORS error ?)
+        getRestaurants() ;
+    } , []) ;
+    
+    async function getRestaurants(){
+        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.9120152&lng=77.7122996&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING") ;
+        const json = await data.json() ;
+        console.log(json) ;
+    }
 
     //Two Parameters of useEffect : 1. callback function 2. Dependency Array .
     //Dependency array decides on what event will useEffect be called .(Called only once when dependency array is empty .)
     //useEffect is called after render when dependency array is EMPTY .
-    //When dependency array is not empty then it changes after every re-render .
+    //When dependency array is not empty then its called after every re-render(only those re-renders where the concerned dependency is changed) .
 
     //The call-back function inside useEffect is not called immediately but called only when useEffect wants it to be called .
 
