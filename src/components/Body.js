@@ -52,10 +52,19 @@ function filterData(search , restro){
     return filtered ;
 }
 
+//Two ways to integrate APIs :
+    //1. As soon as the user reloads(lif 200ms) the page call API(if 300ms) .
+    //The page will take 500 ms to render .
+
+    //2. As soon as user loads the page , 
+    //show user something on the page then call API the update UI .
+
 
 const Body = () =>{
 
     console.log("re render") ;
+    //React will only update searchText but it will quickly re-render the whole header component .
+
     //Search text is a local state variable .
     const [searchText , setSearchText] = useState("") ;       //To create state variable .
 

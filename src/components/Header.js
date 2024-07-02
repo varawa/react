@@ -14,22 +14,13 @@ export const Title = () => (
 
 export const Header = () => {
 
-    [title , setTitle] = useState("Food Villa") ;
-    {console.log("everything re-rendered")} ;
-
-    //React will only update <h1> tag but it will quickly re-render the whole header component .
-
-
     return (
         <div className = "header">
             <Title/>
             <h1>
-                {title}
+                Food Villa
             </h1>
-            <button
-                onClick={() =>(setTitle("New Title"))}>
-                Change Title
-            </button>
+            
             <div className = "nav-items">
                 <ul>
                     <li>Home</li>
