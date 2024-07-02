@@ -59,6 +59,7 @@ function filterData(search , restro){
 
     //2. As soon as user loads the page , 
     //show user something on the page then call API the update UI .
+    //In most cases a BASIC SKELETON is shown .(Shimmer Effect)
 
 
 const Body = () =>{
@@ -69,7 +70,7 @@ const Body = () =>{
     //Search text is a local state variable .
     const [searchText , setSearchText] = useState("") ;       //To create state variable .
     
-    const[restaurants , setRestaurants] = useState(restaurantList) ;
+    const[restaurants , setRestaurants] = useState([]) ;
 
     //[searchText , setSearchText] destructured the array returned by useState .
     //React doesnt have "Two Way Data Binding" .
@@ -84,6 +85,8 @@ const Body = () =>{
     useEffect(() =>{
         //API call              (CORS error ?)
         getRestaurants() ;
+        //Handling errors ?
+    
     } , []) ;
     
     async function getRestaurants(){
