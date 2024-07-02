@@ -29,14 +29,22 @@ import { useState } from "react";
 //  What is Hook ? -functions
 //  What is useState ?
 
+function filterData(search , restro){
+    const filtered = restro.filter((restaurant)=>
+        restaurant.info.name.includes(search)
+    ) ;
+
+    return filtered ;
+}
+
 
 const Body = () =>{
 
 
     //Search text is a local state variable .
-    const [searchText , setSearchText] = useState() ;       //To create state variable .
+    const [searchText , setSearchText] = useState("") ;       //To create state variable .
  
-    const[searchClicked , setSearchClicked] = useState("False") ;
+    const[restaurants , setRestaurants] = useState(restaurantList) ;
 
     //[searchText , setSearchText] destructured the array returned by useState .
     //React doesnt have "Two Way Data Binding" .
@@ -61,13 +69,17 @@ const Body = () =>{
                         console.log(searchText) ;
                     }}
                 />
-                <h1>{searchClicked}</h1>
-                <button className="search-btn" onClick={()=>{
-                    if(searchClicked == "True")
-                        setSearchClicked("False") ;
-                    else
-                        setSearchClicked("True") ;
-                }}>Search - {searchText}</button>
+                
+                <button 
+                    className="search-btn" 
+                    onClick={()=>{
+                        const filteredData = filterData(searchText , restaurants) ;
+                        
+                        setRestaurants(filteredData) ;
+                    }}
+                >
+                    Search  
+                 </button>
 
             </div>
 
@@ -79,7 +91,7 @@ const Body = () =>{
                     //a key is the only thing React uses to identify DOM elements. 
                     //What happens if you push an item to the list or remove something in the middle? 
                     //If the key is same as before React assumes that the DOM element represents the same component as before. But that is no longer true.
-                    restaurantList.map(restaurant =>{
+                    restaurants.map(restaurant =>{
                         return <RestaurantCard {...restaurant.info} key={restaurant.info.name}/>
                     })
                 }
