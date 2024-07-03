@@ -44,6 +44,6 @@ export const Header = () => {
 }
 
 
-//export default Title ;
+export default Header ;
 
 //While exporting by default , we can change the name of function component in the file where we import it .
