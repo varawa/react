@@ -2,12 +2,6 @@ import { useState } from "react";
 
 import logo from "../assets/logo.png"
 
-const authenticateUser = () => {
-    //API call to check authentication .
-
-    return false ;
-}
-
 
 export const Title = () => (
     <a href = "/">
@@ -28,9 +22,6 @@ export const Header = () => {
     return (
         <div className = "header">
             <Title/>
-            <h1>
-                Food Villa
-            </h1>
             
             <div className = "nav-items">
                 <ul>

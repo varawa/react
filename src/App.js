@@ -1,17 +1,18 @@
 import React from "react" ;
 import ReactDOM from "react-dom/client" ;
-
 //Named Import
 import {Title} from "./components/Header"
-
 //Default Import
 import Header from "./components/Header"
 
 import * as obj from "./components/Header"
-
 import Body from "./components/Body"
-
 import Footer from "./components/Footer"
+import About from "./components/About";
+
+import { createBrowserRouter , RouterProvider } from "react-router-dom";
+
+//createBrowserRouter is a function we import from react-router-dom that helps us create routing .
 
 //obj.Title
 
@@ -32,6 +33,7 @@ import Footer from "./components/Footer"
  *  -Copyright
  */
 
+
 const AppLayout = ()=>{
     return (
         <>
@@ -43,9 +45,23 @@ const AppLayout = ()=>{
     ) ;
 }
 
+const appRouter = createBrowserRouter([
+    {
+        path: "/",
+        element: <AppLayout/>
+    },
+    {
+        path: "/about",
+        element: <About/>
+    }
+]);
+
+//We need to provide this app router to our app .
+//RouterProvider is used to that (imported from react-router-dom)
+
 const root = ReactDOM.createRoot(document.getElementById("root")) ;
 
-root.render(<AppLayout/>) ;
+root.render(<RouterProvider router = {appRouter}/>) ;
 
 //COMPOSING COMPONENTS
 
