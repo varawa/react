@@ -72,7 +72,7 @@ const Body = () =>{
     const [searchText , setSearchText] = useState("") ;       //To create state variable .
     
     const[allRestaurants , setAllRestaurants] = useState([]) ;
-    const[filteredResaturants , setFilteredRestaurants] = useState([]) ;
+    const[filteredRestaurants , setFilteredRestaurants] = useState([]) ;
 
     //[searchText , setSearchText] destructured the array returned by useState .
     //React doesnt have "Two Way Data Binding" .
@@ -103,7 +103,7 @@ const Body = () =>{
     }
 
     //(Early Return)
-    //if(!allRestaurants) return null ;
+    if(!allRestaurants) return null ;
 
     
     return allRestaurants.length === 0 ? <ShimmerDiv/> : (
@@ -132,7 +132,6 @@ const Body = () =>{
             </div>
 
             <div className="restaurantList">
-                
                 {
                     //Map vs for loop.
 
@@ -140,8 +139,8 @@ const Body = () =>{
                     //a key is the only thing React uses to identify DOM elements. 
                     //What happens if you push an item to the list or remove something in the middle? 
                     //If the key is same as before React assumes that the DOM element represents the same component as before. But that is no longer true.
-
-                    filteredResaturants.map(restaurant =>{
+                    filteredRestaurants.length === 0 ? <h1>No matches found !</h1> :
+                    filteredRestaurants.map(restaurant =>{
                         return <RestaurantCard {...restaurant.info} key={restaurant.info.name}/>
                     })
                 }

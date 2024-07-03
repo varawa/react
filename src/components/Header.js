@@ -1,5 +1,12 @@
 import { useState } from "react";
 
+const authenticateUser = () => {
+    //API call to check authentication .
+
+    return false ;
+}
+
+
 export const Title = () => (
     <a href = "/">
         <img
@@ -13,6 +20,8 @@ export const Title = () => (
 
 
 export const Header = () => {
+
+    const [isLoggedIn , setIsLoggedIn] = useState(false) ;
 
     return (
         <div className = "header">
@@ -29,6 +38,14 @@ export const Header = () => {
                     <li>Cart</li>
                 </ul>
             </div>
+
+        {
+            isLoggedIn ? 
+                <button onClick = {() => setIsLoggedIn(false)}>Logout</button> 
+                : 
+                <button onClick = {() => setIsLoggedIn(true)}>Login</button> 
+        }
+                
         </div>
     )
 }
