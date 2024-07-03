@@ -1,12 +1,11 @@
-import { restaurantList } from "../config"
-  
+
 import { RestaurantCard } from "./RestaurantCard"
 
 import { useState } from "react";
 
 import { useEffect } from "react";
 
-import Shimmer from "./shimmer";
+import ShimmerDiv from "./shimmer";
 
 //  Optional Chaining ?.
 
@@ -48,8 +47,8 @@ import Shimmer from "./shimmer";
 
 function filterData(search , restro){
     
-    const filtered = restro.filter((restaurant)=>
-        restaurant.info.name.includes(search)
+    var filtered = restro.filter((restaurant)=>
+        restaurant?.info?.name?.toLowerCase()?.includes(search.toLowerCase())
     ) ;
     
     return filtered ;
@@ -72,7 +71,8 @@ const Body = () =>{
     //Search text is a local state variable .
     const [searchText , setSearchText] = useState("") ;       //To create state variable .
     
-    const[restaurants , setRestaurants] = useState([]) ;
+    const[allRestaurants , setAllRestaurants] = useState([]) ;
+    const[filteredResaturants , setFilteredRestaurants] = useState([]) ;
 
     //[searchText , setSearchText] destructured the array returned by useState .
     //React doesnt have "Two Way Data Binding" .
@@ -98,22 +98,15 @@ const Body = () =>{
 
         //Optional chaining .
 
-        setRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants) ;
+        setAllRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants) ;
+        setFilteredRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants) ;
     }
 
-    //Two Parameters of useEffect : 1. callback function 2. Dependency Array .
-    //Dependency array decides on what event will useEffect be called .(Called only once when dependency array is empty .)
-    //useEffect is called after render when dependency array is EMPTY .
-    //When dependency array is not empty then its called after every re-render(only those re-renders where the concerned dependency is changed) .
-
-    //The call-back function inside useEffect is not called immediately but called only when useEffect wants it to be called .
-
-    //Conditional Rendering .
-    //If(restaurant === empty) => load shimmer UI
-    //if it has data then load actual UI .
+    //(Early Return)
+    //if(!allRestaurants) return null ;
 
     
-    return (restaurants.length === 0) ? <Shimmer/> : (
+    return allRestaurants.length === 0 ? <ShimmerDiv/> : (
         <>
             <div className="search-container">
                 <input 
@@ -125,13 +118,13 @@ const Body = () =>{
                         setSearchText(e.target.value) ;
                     }}
                 />
-                
+            
                 <button 
                     className="search-btn" 
                     onClick={()=>{
-                        const filteredData = filterData(searchText , restaurants) ;
+                        const filteredData = filterData(searchText , allRestaurants) ;
                         
-                        setRestaurants(filteredData) ;
+                        setFilteredRestaurants(filteredData) ;
                     }}
                     >
                     Search  
@@ -139,6 +132,7 @@ const Body = () =>{
             </div>
 
             <div className="restaurantList">
+                
                 {
                     //Map vs for loop.
 
@@ -146,7 +140,8 @@ const Body = () =>{
                     //a key is the only thing React uses to identify DOM elements. 
                     //What happens if you push an item to the list or remove something in the middle? 
                     //If the key is same as before React assumes that the DOM element represents the same component as before. But that is no longer true.
-                    restaurants.map(restaurant =>{
+
+                    filteredResaturants.map(restaurant =>{
                         return <RestaurantCard {...restaurant.info} key={restaurant.info.name}/>
                     })
                 }
@@ -157,3 +152,15 @@ const Body = () =>{
 } ;
 
 export default Body ;
+
+
+    //Two Parameters of useEffect : 1. callback function 2. Dependency Array .
+    //Dependency array decides on what event will useEffect be called .(Called only once when dependency array is empty .)
+    //useEffect is called after render when dependency array is EMPTY .
+    //When dependency array is not empty then its called after every re-render(only those re-renders where the concerned dependency is changed) .
+
+    //The call-back function inside useEffect is not called immediately but called only when useEffect wants it to be called .
+
+    //Conditional Rendering .
+    //If(restaurant === empty) => load shimmer UI
+    //if it has data then load actual UI .
