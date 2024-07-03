@@ -10,8 +10,9 @@ import Body from "./components/Body"
 import Footer from "./components/Footer"
 import About from "./components/About";
 import Error from "./components/Error";
+import Contact from "./components/Contact";
 
-import { createBrowserRouter , RouterProvider } from "react-router-dom";
+import { createBrowserRouter , RouterProvider , Outlet} from "react-router-dom";
 
 //createBrowserRouter is a function we import from react-router-dom that helps us create routing .
 
@@ -39,8 +40,9 @@ const AppLayout = ()=>{
     return (
         <>
             <Header/>
-            {/* <React.Fragment/> works the same way .*/}
-            <Body/>
+            {/*{Outlet}*/}
+            <Outlet/>
+            
             <Footer/>
         </>
     ) ;
@@ -50,11 +52,22 @@ const appRouter = createBrowserRouter([
     {
         path: "/",
         element: <AppLayout/>,
-        errorElement: <Error/>
-    },
-    {
-        path: "/about",
-        element: <About/>
+        errorElement: <Error/>,
+        children:[
+            {
+                path: "/about",
+                element: <About/>
+            },
+            {
+                path: "/contact",
+                element: <Contact/>
+            },
+            {
+                path: "/",
+                element: <Body/>
+            }
+
+        ]
     },
 ]);
 
