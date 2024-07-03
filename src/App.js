@@ -13,6 +13,8 @@ import Body from "./components/Body"
 
 import Footer from "./components/Footer"
 
+import Logo from "./assets/logo.png"
+
 //obj.Title
 
 
@@ -32,13 +34,6 @@ import Footer from "./components/Footer"
  *  -Copyright
  */
 
-
-//COMPOSING COMPONENTS
-
-//Config Driven UI (Backend and APIs controls what the website shows on different occassions/places etc. )
-
-//Config : A JS object sent by backend that changes the UI dynamically .
-
 const AppLayout = ()=>{
     return (
         <>
@@ -50,14 +45,21 @@ const AppLayout = ()=>{
     ) ;
 }
 
+const root = ReactDOM.createRoot(document.getElementById("root")) ;
+
+root.render(<AppLayout/>) ;
+
+//COMPOSING COMPONENTS
+
+//Config Driven UI (Backend and APIs controls what the website shows on different occassions/places etc. )
+
+//Config : A JS object sent by backend that changes the UI dynamically .
+
+
 //React.Fragment
 //Its a component exported by React .
 //Its like an empty tag .
 //Can be written as <> </>
-
-const root = ReactDOM.createRoot(document.getElementById("root")) ;
-
-root.render(<AppLayout/>) ;
 
 //Virtual DOM
 

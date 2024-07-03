@@ -7,43 +7,6 @@ import { useEffect } from "react";
 
 import ShimmerDiv from "./shimmer";
 
-//  Optional Chaining ?.
-
-
-
-//  props = properties .
-//  props are passed as arguments in the functional component on their own .
-
-//  JSX curly braces do support embedding JavaScript expressions, 
-//  but they do not support JavaScript statements like for loops directly. 
-//  JavaScript expressions return a value, whereas statements perform an action. Here’s the difference:
-
-//  Expressions are things like 2 + 2, myArray.map(...), or restaurant.name.
-//  Statements are things like if conditions, for loops, and while loops.
-
-
-//  ONE WAY DATA-BINDING
-
-//  React uses one-way data binding .
-
-
-//  What is State ?
-//  What is Hook ? -functions
-//  What is useState ?
-
-//useState is a hook .
-
-
-//MicroServices ?
-//We have small projects for every small component (UI , API , Notifications , Logs , Authentication) .
-//And every component (small project) can run on different ports and can have different databases that they rely on .
-
-//How these are connected ?
-//All the ports are mapped to eachother and in majority cases have the same domain name .
-
-//Seperation of concern (SOC) .
-
-//Monolith ?
 
 function filterData(search , restro){
     
@@ -73,16 +36,6 @@ const Body = () =>{
     
     const[allRestaurants , setAllRestaurants] = useState([]) ;
     const[filteredRestaurants , setFilteredRestaurants] = useState([]) ;
-
-    //[searchText , setSearchText] destructured the array returned by useState .
-    //React doesnt have "Two Way Data Binding" .
-
-    //useState() hooks are used to create local state variables in react .
-
-    //Why do we need state variables?
-
-    //React has one way binding, also react does not keep track of changes made in local variables ,
-    //but it keeps track of state variables .
 
     useEffect(() =>{
         //API call              (CORS error ?)
@@ -152,14 +105,64 @@ const Body = () =>{
 
 export default Body ;
 
+//  Optional Chaining ?.
 
-    //Two Parameters of useEffect : 1. callback function 2. Dependency Array .
-    //Dependency array decides on what event will useEffect be called .(Called only once when dependency array is empty .)
-    //useEffect is called after render when dependency array is EMPTY .
-    //When dependency array is not empty then its called after every re-render(only those re-renders where the concerned dependency is changed) .
+//  props = properties .
+//  props are passed as arguments in the functional component on their own .
 
-    //The call-back function inside useEffect is not called immediately but called only when useEffect wants it to be called .
+//  JSX curly braces do support embedding JavaScript expressions, 
+//  but they do not support JavaScript statements like for loops directly. 
+//  JavaScript expressions return a value, whereas statements perform an action. Here’s the difference:
 
-    //Conditional Rendering .
-    //If(restaurant === empty) => load shimmer UI
-    //if it has data then load actual UI .
+//  Expressions are things like 2 + 2, myArray.map(...), or restaurant.name.
+//  Statements are things like if conditions, for loops, and while loops.
+
+
+//  ONE WAY DATA-BINDING
+
+//  React uses one-way data binding .
+
+
+//  What is State ?
+//  What is Hook ? -functions
+//  What is useState ?
+
+//useState is a hook .
+
+//[searchText , setSearchText] destructured the array returned by useState .
+//React doesnt have "Two Way Data Binding" .
+
+//useState() hooks are used to create local state variables in react .
+
+//Why do we need state variables?
+
+//React has one way binding, also react does not keep track of changes made in local variables ,
+//but it keeps track of state variables .
+
+//Two Parameters of useEffect : 1. callback function 2. Dependency Array .
+//Dependency array decides on what event will useEffect be called .(Called only once when dependency array is empty .)
+//useEffect is called after first render when dependency array is EMPTY .
+//useEffect is called after every render when dependency array is no passed as a parameter .
+//When dependency array is not empty then its called after every re-render(only those re-renders where the concerned dependency is changed) .
+
+//The call-back function inside useEffect is not called immediately but called only when useEffect wants it to be called .
+
+//Conditional Rendering .
+//If(restaurant === empty) => load shimmer UI
+//if it has data then load actual UI .
+
+
+//MicroServices ?
+//We have small projects for every small component (UI , API , Notifications , Logs , Authentication) .
+//And every component (small project) can run on different ports and can have different databases that they rely on .
+
+//How these are connected ?
+//All the ports are mapped to eachother and in majority cases have the same domain name .
+
+//Seperation of concern (SOC) .
+
+//Monolith ?
+
+//Why is CDN a good way to host images ?
+    
+
