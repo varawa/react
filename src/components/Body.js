@@ -5,7 +5,7 @@ import { useState } from "react";
 
 import { useEffect } from "react";
 
-import ShimmerDiv from "./shimmer";
+import Shimmer from "./shimmer";
 
 
 function filterData(search , restro){
@@ -59,7 +59,7 @@ const Body = () =>{
     if(!allRestaurants) return null ;
 
     
-    return allRestaurants.length === 0 ? <ShimmerDiv/> : (
+    return allRestaurants.length === 0 ? <Shimmer/> : (
         <>
             <div className="search-container">
                 <input 

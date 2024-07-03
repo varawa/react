@@ -39,3 +39,24 @@
 .search-container{
     width: auto;
 }
+
+.shimmer{
+    width: 221.6px;
+    height: 549.06px;
+    margin: 10px;
+    background: linear-gradient(90deg, #eee 40%, #fafafa 50%, #eee 60%);
+    background-size: 300%;
+    background-position-x: 100% ;
+    animation: sh 2s infinite linear;
+}
+
+@keyframes sh {
+    to {
+       background-position-x: 0%
+    }
+ }
+
+.shimmer-restro{
+    display: flex;
+    flex-wrap: wrap;
+}

@@ -26,8 +26,7 @@
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-loading-skeleton": "^3.4.0",
-    "shimmer-effects-react": "^1.0.4"
+    "react-loading-skeleton": "^3.4.0"
   },
   "browserList": [
     "last 2 versions"

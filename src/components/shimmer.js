@@ -1,9 +1,15 @@
 
 
-const ShimmerDiv = () =>{
+const Shimmer = () =>{
     return  (
-        <h1>Loading...</h1>
+        <div className="shimmer-restro">
+            {Array(12).fill("").map((e) => (
+                <div className="shimmer">
+                    <div className="shimmer-img"></div>
+                </div>
+            ))}
+        </div>
     );
 };
 
-export default ShimmerDiv ;
+export default Shimmer ;

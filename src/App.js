@@ -13,8 +13,6 @@ import Body from "./components/Body"
 
 import Footer from "./components/Footer"
 
-import Logo from "./assets/logo.png"
-
 //obj.Title
 
 
