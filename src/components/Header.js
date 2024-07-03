@@ -2,6 +2,8 @@ import { useState } from "react";
 
 import logo from "../assets/logo.png"
 
+import {Link} from "react-router-dom"
+
 
 export const Title = () => (
     <a href = "/">
@@ -13,7 +15,16 @@ export const Title = () => (
     </a>
 );
 
+//Anchor tag causes the whole page to reload .
 
+//SPA - Single Page Application
+
+//Two types of Routing ?
+//----------------------
+//1. Client Side Routing 
+//2. Server Side Routing
+
+//We'll use client side routing .
 
 export const Header = () => {
 
@@ -25,8 +36,16 @@ export const Header = () => {
             
             <div className = "nav-items">
                 <ul>
-                    <li>Home</li>
-                    <li>About Us</li>
+                    <li>
+                        <Link to="/">
+                            Home
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to="/about">
+                            About Us
+                        </Link>
+                    </li>
                     <li>Contact</li>
                     <li>Cart</li>
                 </ul>
