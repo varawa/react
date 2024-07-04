@@ -45,7 +45,7 @@ const Body = () =>{
     } , []) ;
     
     async function getRestaurants(){
-        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.9120152&lng=77.7122996&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING") ;
+        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9715987&lng=77.5945627&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING") ;
         const json = await data.json() ;
         console.log(json) ;
 
@@ -54,6 +54,21 @@ const Body = () =>{
         setAllRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants) ;
         setFilteredRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants) ;
     }
+
+    const [placeholderIndex, setPlaceholderIndex] = useState(0);
+    const placeholders = [
+        'Search...',
+        "what's on your mind ?",
+        'Search for popular restaurants...',
+    ];
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setPlaceholderIndex(prevIndex => (prevIndex + 1) % placeholders.length);
+        }, 3000); // Change placeholder every 3 seconds (adjust as needed)
+
+        return () => clearInterval(interval);
+    }, [placeholderIndex]);
 
     //(Early Return)
     if(!allRestaurants) return null ;
@@ -65,7 +80,7 @@ const Body = () =>{
                 <input 
                     type="text" 
                     className="search-input" 
-                    placeholder="Search" 
+                    placeholder={placeholders[placeholderIndex]}
                     value={searchText}
                     onChange={(e) => {
                         setSearchText(e.target.value) ;
@@ -80,7 +95,7 @@ const Body = () =>{
                         setFilteredRestaurants(filteredData) ;
                     }}
                     >
-                    Search  
+                    Search 
                  </button>
             </div>
 

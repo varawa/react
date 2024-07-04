@@ -11,6 +11,7 @@ import Footer from "./components/Footer"
 import About from "./components/About";
 import Error from "./components/Error";
 import Contact from "./components/Contact";
+import RestaurantMenu from "./components/RestaurantMenu"
 
 import { createBrowserRouter , RouterProvider , Outlet} from "react-router-dom";
 
@@ -40,7 +41,7 @@ const AppLayout = ()=>{
     return (
         <>
             <Header/>
-            {/*{Outlet}*/}
+            
             <Outlet/>
             
             <Footer/>
@@ -65,6 +66,10 @@ const appRouter = createBrowserRouter([
             {
                 path: "/",
                 element: <Body/>
+            },
+            {
+                path: "/restaurant/:id",
+                element: <RestaurantMenu/>
             }
 
         ]
@@ -121,3 +126,10 @@ root.render(<RouterProvider router = {appRouter}/>) ;
 //import {useRouteError} from "react-router-dom";
 //       ---------------
 //useRouteError is a hook .
+
+//Link Tag
+//--------
+//Link Component too uses Anchor tag .
+//react-router-dom keeps track of all Links .
+
+//Dynamic/Conditional routing .
