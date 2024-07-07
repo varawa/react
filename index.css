@@ -3,6 +3,7 @@ html {
     padding: 0;
     width: 100%;
     height: 100%;
+    
 }
 
 body {
@@ -10,38 +11,38 @@ body {
   }
 
 .header{
-    
     width: 100%;
+    height: 15vh;
     display: flex;
     justify-content:space-between ;
     
     background-color: rgb(252, 218, 224);
     border-radius: 0.5rem;
-    box-shadow: 0 0 10px rgba(36, 15, 31, 0.563);
+    box-shadow: 0 0 0.625rem rgba(36, 15, 31, 0.563);
     
 }
 
 .logo{
-    margin-left: 8px;
-    width: 100px ;
+    width:6vw ;
+    
 }
 
 .card{
-    width: 330px;
-    height: 330px;
-    box-shadow: 0 0 10px #433b3bf3;
+    width: 20vw;
+    height: 40vh;
+    box-shadow: 0 0 0.5rem #433b3bf3;
     border-radius: 0.5rem;
-    padding: 10px;
-    margin: 10px;
+    padding: 0.625rem;
+    margin: 0.625rem;
 }
 
 .time{
-    padding: 2px;
-    width: 330px;  /* Set the width of your element */
-    overflow: hidden;  /* Hide content that overflows */
-    text-overflow: ellipsis;  /* Display "..." for overflow */
+    padding: 0.125rem;
+    width: 25vw; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
     white-space: nowrap;
-    font-size: 14px;
+    font-size: 0.875rem;
 }
 
 .line2 , .head{
@@ -50,49 +51,58 @@ body {
 }
 
 .head{
-    margin-top: 8px;
+    margin-top: 0.5rem;
 }
 
 .rating{
+    color: white;
     display: flex;
     justify-content: end;
     justify-items: center;
     border-radius: 0.5rem;
-    box-shadow: 0 0 3px #433b3bf3 ;
-    padding: 1px;
-    margin: 5px;
-}
-
-.star{
-    margin-left: 1px ;
-    width: 14px;
-    height: 15px;
+    box-shadow: 0 0 0.1875rem #433b3bf3 ;
+    padding: 0.125rem;
+    margin: 0.3125rem;
+    background-color: green ;
 }
 
 .ratingNum{
-    margin-right: 2px;
-    font-size: 14px;
+    color:white;
+    margin: 0.0625rem;
+    align-self: center;
+    font-size: 0.8125rem;
+}
+
+.star{
+    margin:0.125rem;
+    align-self: center;
+    width: 0.75rem;
 }
 
 .cuisine{
-    font-size: 17px;
-    width: 165px;  /* Set the width of your element */
+    font-size: 1.0625rem;
+    width: 13vw;  /* Set the width of your element */
     overflow: hidden;  /* Hide content that overflows */
     text-overflow: ellipsis;  /* Display "..." for overflow */
     white-space: nowrap;
 }
 
 .name{
-    width: 195px;  /* Set the width of your element */
+    width: 15vw;  /* Set the width of your element */
     overflow: hidden;  /* Hide content that overflows */
     text-overflow: ellipsis;  /* Display "..." for overflow */
     white-space: nowrap;
-    font-size: 20px;
+    font-size: 1.25rem;
+}
+
+.line2{
+    display: flex;
+    justify-content:space-between;
 }
 
 .cost{
-    font-size: 15px;
-    width: 90px;  /* Set the width of your element */
+    font-size: 0.9375rem;
+    width: 5vw;  /* Set the width of your element */
     overflow: hidden;  /* Hide content that overflows */
     text-overflow: ellipsis;  /* Display "..." for overflow */
     white-space: nowrap;
@@ -142,6 +152,7 @@ body {
 .restaurantList{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .search-container{

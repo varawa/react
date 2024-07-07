@@ -11,7 +11,7 @@ export const RestaurantCard = ({name , cuisines , cloudinaryImageId ,sla , costF
                     {name}
                 </div>
                 <div className="rating">
-                <svg  className="star" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 512 512" viewBox="0 0 512 512" id="star"><polygon fill="#ffd759" points="102.6 494.1 137 320.1 6 200.5 182.1 179.5 255.3 17.9 329.7 178.9 506 198.6 375.9 319.2 411.6 492.9 256.8 406.4"></polygon><polygon fill="#fabd3b" points="256 256 6 200.5 137 320.1"></polygon><polygon fill="#fabd3b" points="256 256 102.6 494.1 256.8 406.4 411.6 492.9"></polygon><polygon fill="#fabd3b" points="256 256 506 198.6 375.9 319.2"></polygon><polygon fill="#fabd3b" points="255.3 17.9 256 256 329.7 178.9"></polygon></svg>
+                <img className="star" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAX9JREFUSEvFlkFywiAUht8bT8BCHFfVmyQ3qSfRnqTepLlJ05UjLjgB0iEJlaTACygTZjJmEfn44X8/D2GhgQtxIRsshXg3i2acn3MWnwWWt1sFWn91QMSarddNKjwPLISBVgOsYZzXxcEjtZaWoTpZsRTiEwC683XGmXF+SFGdA9YeQAtK1Wy7befCk8Dyej0B4jEweZLqNLAQPrV2HS3jfJ+luDPO/d67FfFtmGQHAPah5rVbbX77d61/ALF7d2v+T/EQCMY45Ybj/gfYDYVSaKX21oCjMybM89xyJrX+z1xFttwTMF5XvxDeAuLBl+XBcnoBPBoq0Tp+Ak5eHGSAyHhohAxHplgpxWSKlQKTDQIF9l2B8+pZ6w+22ZxCH1Pg7yGn58HGX0UNRoFDt1EDSvUX/2pldsW2QS46es7pdezZwmDURlqiGHh6vp3KUJchL5edR32wrGLgRydJGMXd34n6DHCvoAKlmpReyixiUF/Fmn0yuXLsPOc/i4F/AQA9uh/3ksXxAAAAAElFTkSuQmCC"/>
                 <div className="ratingNum">
                     {avgRating}
                 </div>
