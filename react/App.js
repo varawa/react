@@ -1,6 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom/client" ;
-
+import ReactDOM from "react-dom" ;
 /*
 *   HMR - Hot Module Replacement .
 *   File watcher algorithm - C++ .
@@ -19,6 +18,8 @@ import ReactDOM from "react-dom/client" ;
 *   Zero Configuration .
 *
 */
+
+console.log("ive been called") ;
 
 const heading1 = React.createElement("h1" , 
     {  
@@ -85,10 +86,10 @@ root.render(container);
 //JSX => React.createElement => Object => HTML(DOM)
 //Babel converts JSX to createElement .
 
-const heading = (<h1 id="title" key="h3">
+/*const heading = (<h1 id="title" key="h3">
         Namaste React
     </h1>
-);
+);*/
 
 //The above thing is called "JSX EXPRESSION" .
 
